@@ -1,10 +1,5 @@
 /*
-James Vaughan
-Professor Shengli Yuan
-CS 3326 Network Security
-13 October 2014
-
-JRV_DES.cpp
+JRV_DES.cpp by James R. Vaughan
 
 Purposes:
 Implement DES in C++
