@@ -7,7 +7,6 @@ Encryption Input: 8 byte hex as the plaintext, one 7-byte hex as the key (or 8-b
 Encryption Output: 8 bytes hex
 Decryption Input: 8 bytes hex as the cipher text, one 7-byte hex as the key (or 8-byte if you ignore the last bit of each byte)
 Decryption Output: 8 byte hex characters
-You must submit your source code, screen shot with "AABBCCDD11223344" as the plain text and "71322185720000" as the key. You will also need to do a demo.
 
 Stages:
 1. Initial permutation
