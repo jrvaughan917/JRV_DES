@@ -1,8 +1,6 @@
 # JRV_DES
 
-Purposes:
-
-Implement DES in C++
+Implements DES enctyption and decryption in C++
 
 Encryption Input: 8 byte hex as the plaintext, one 7-byte hex as the key (or 8-byte if you ignore the last bit of each byte)
 
