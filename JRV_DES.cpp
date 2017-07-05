@@ -166,9 +166,9 @@ std::string ManglerXOR(string Text_Round_Right, string MangledText)
 std::string ManglerFinalPermute(string TextToPermutate)
 {
 	string PermutatedText = "11112222333344445555666677778888"; //32 bits long
-	// Input 32 bits, output 32 bits
+																// Input 32 bits, output 32 bits
 
-	// 1
+																// 1
 	PermutatedText[1 - 1] = TextToPermutate[16 - 1];
 	PermutatedText[2 - 1] = TextToPermutate[7 - 1];
 	PermutatedText[3 - 1] = TextToPermutate[20 - 1];
@@ -1065,7 +1065,7 @@ std::string Mangler(string InputText, string Final_Key_Left, string Final_Key_Ri
 
 	InputText = BitExpansion(InputText); // Expand the 32 bit input to 48 bits
 
-	// XOR'ing the left and right keys with the text:
+										 // XOR'ing the left and right keys with the text:
 	for (int bitIndex = 0; bitIndex < 24; bitIndex++) // bits 0-23, left
 	{
 		if (InputText[bitIndex] == Final_Key_Left[bitIndex])
@@ -1121,9 +1121,9 @@ std::string Mangler(string InputText, string Final_Key_Left, string Final_Key_Ri
 std::string Final_Key_Left_Permutation(string TextToPermutate)
 {
 	string PermutatedText = "111122223333444455556666"; //24 bits long
-	// Input 28 bits, output 24 bits
+														// Input 28 bits, output 24 bits
 
-	// 1
+														// 1
 	PermutatedText[1 - 1] = TextToPermutate[14 - 1];
 	PermutatedText[2 - 1] = TextToPermutate[17 - 1];
 	PermutatedText[3 - 1] = TextToPermutate[11 - 1];
@@ -1160,15 +1160,15 @@ std::string Final_Key_Left_Permutation(string TextToPermutate)
 std::string Final_Key_Right_Permutation(string TextToPermutate)
 {
 	string PermutatedText = "111122223333444455556666"; //24 bits long
-	// Input 28 bits, output 24 bits
-	// In the table in the book, the bits are numbered 29-56
-	// In our half key, there are only 28 bits
-	// Our numbers should be 1 - 28
-	// Our numbers are book numbers - 28
-	// Subtract 1 more for the array
-	// Book number -29
+														// Input 28 bits, output 24 bits
+														// In the table in the book, the bits are numbered 29-56
+														// In our half key, there are only 28 bits
+														// Our numbers should be 1 - 28
+														// Our numbers are book numbers - 28
+														// Subtract 1 more for the array
+														// Book number -29
 
-	// 1
+														// 1
 	PermutatedText[1 - 1] = TextToPermutate[41 - 29];
 	PermutatedText[2 - 1] = TextToPermutate[52 - 29];
 	PermutatedText[3 - 1] = TextToPermutate[31 - 29];
@@ -1205,9 +1205,9 @@ std::string Final_Key_Right_Permutation(string TextToPermutate)
 std::string RotateTwo(string TextToPermutate)
 {
 	string PermutatedText = "1111222233334444555566667777"; //28 bits long
-	// Input 64 bits, output 28 bits
+															// Input 64 bits, output 28 bits
 
-	// 1
+															// 1
 	PermutatedText[1 - 1] = TextToPermutate[3 - 1];
 	PermutatedText[2 - 1] = TextToPermutate[4 - 1];
 	PermutatedText[3 - 1] = TextToPermutate[5 - 1];
@@ -1245,9 +1245,9 @@ std::string RotateTwo(string TextToPermutate)
 std::string RotateOne(string TextToPermutate)
 {
 	string PermutatedText = "1111222233334444555566667777"; //28 bits long
-	// Input 64 bits, output 28 bits
+															// Input 64 bits, output 28 bits
 
-	// 1
+															// 1
 	PermutatedText[1 - 1] = TextToPermutate[2 - 1];
 	PermutatedText[2 - 1] = TextToPermutate[3 - 1];
 	PermutatedText[3 - 1] = TextToPermutate[4 - 1];
@@ -1285,9 +1285,9 @@ std::string RotateOne(string TextToPermutate)
 std::string DES_Initial_Permutation_Left(string TextToPermutate)
 {
 	string PermutatedText = "1111222233334444555566667777"; //28 bits long
-	// Input 64 bits, output 28 bits
+															// Input 64 bits, output 28 bits
 
-	// 1
+															// 1
 	PermutatedText[1 - 1] = TextToPermutate[57 - 1];
 	PermutatedText[2 - 1] = TextToPermutate[49 - 1];
 	PermutatedText[3 - 1] = TextToPermutate[41 - 1];
@@ -1328,9 +1328,9 @@ std::string DES_Initial_Permutation_Left(string TextToPermutate)
 std::string DES_Initial_Permutation_Right(string TextToPermutate)
 {
 	string PermutatedText = "1111222233334444555566667777"; //28 bits long
-	// Input 64 bits, output 28 bits
+															// Input 64 bits, output 28 bits
 
-	// 1
+															// 1
 	PermutatedText[1 - 1] = TextToPermutate[63 - 1];
 	PermutatedText[2 - 1] = TextToPermutate[55 - 1];
 	PermutatedText[3 - 1] = TextToPermutate[47 - 1];
@@ -1602,13 +1602,13 @@ std::string DES_Encrypt(string PlainText, string DES_Key)
 	DES_Key_Left = DES_Initial_Permutation_Left(DES_Key); // initial permutation and left side of key
 	DES_Key_Right = DES_Initial_Permutation_Right(DES_Key); // initial permutation and right side of key
 
-	// split the plaintext in half
+															// split the plaintext in half
 	Text_Round_Left.append(BinaryText, 0, 32); // first 32 bits of BinaryText
 	Text_Round_Right.append(BinaryText, 32, 32); // last 32 bits of BinaryText
 
-	//
-	// Round 1
-	// *rounds 1, 2, 9, and 16 have left shift of 1*
+												 //
+												 // Round 1
+												 // *rounds 1, 2, 9, and 16 have left shift of 1*
 	DES_Key_Left = RotateOne(DES_Key_Left); // rotate both keys left 1 bit
 	DES_Key_Right = RotateOne(DES_Key_Right);
 	Final_Key_Left = Final_Key_Left_Permutation(DES_Key_Left); // permute both halves of key (but keep the unpermuted halves for later rotation)
@@ -1833,7 +1833,9 @@ std::string DES_Encrypt(string PlainText, string DES_Key)
 	// End of Round 16
 	//
 
-	Text_Round_Left.append(Text_Round_Right); // join the two halves back together
+	//Text_Round_Left.append(Text_Round_Right); // join the two halves back together
+	Text_Round_Right.append(Text_Round_Left);
+	Text_Round_Left = Text_Round_Right;
 	Text_Round_Left = FinalTextPermutation(Text_Round_Left); // final permutation
 	Text_Round_Left = BinaryToHex(Text_Round_Left); // return the ciphertext to hex format
 
@@ -1879,13 +1881,15 @@ std::string DES_Decrypt(string CipherText, string DES_Key)
 	DES_Key_Left = DES_Initial_Permutation_Left(DES_Key); // initial permutation and left side of key
 	DES_Key_Right = DES_Initial_Permutation_Right(DES_Key); // initial permutation and right side of key
 
-	// split the plaintext in half
-	Text_Round_Left.append(BinaryText, 0, 32); // first 32 bits of BinaryText
-	Text_Round_Right.append(BinaryText, 32, 32); // last 32 bits of BinaryText
+															// split the plaintext in half
+															//Text_Round_Left.append(BinaryText, 0, 32); // first 32 bits of BinaryText
+															//Text_Round_Right.append(BinaryText, 32, 32); // last 32 bits of BinaryText
+	Text_Round_Left.append(BinaryText, 32, 32); // first 32 bits of BinaryText
+	Text_Round_Right.append(BinaryText, 0, 32); // last 32 bits of BinaryText
 
 
-	// *rounds 1, 2, 9, and 16 have left shift of 1*
-	// Key Round 1
+												// *rounds 1, 2, 9, and 16 have left shift of 1*
+												// Key Round 1
 	DES_Key_Left_1 = RotateOne(DES_Key_Left); // rotate both keys left 1 bit
 	DES_Key_Right_1 = RotateOne(DES_Key_Right);
 	// Key Round 2
